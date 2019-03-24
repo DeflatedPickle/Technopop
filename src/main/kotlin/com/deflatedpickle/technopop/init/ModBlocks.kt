@@ -1,6 +1,7 @@
 package com.deflatedpickle.technopop.init
 
 import com.deflatedpickle.technopop.Reference
+import com.deflatedpickle.technopop.blocks.BlockLEDMatrix
 import com.deflatedpickle.technopop.blocks.BlockLamp
 import com.github.upcraftlp.glasspane.api.registry.AutoRegistry
 
@@ -8,4 +9,7 @@ import com.github.upcraftlp.glasspane.api.registry.AutoRegistry
 object ModBlocks {
     @JvmField
     val LAMP = BlockLamp()
+
+    @JvmField
+    val LED_MATRIX = BlockLEDMatrix()
 }

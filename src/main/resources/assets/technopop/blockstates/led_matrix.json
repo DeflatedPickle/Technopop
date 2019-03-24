@@ -1,0 +1,33 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "technopop:blocks/cube_column"
+  },
+  "variants": {
+    "power": {
+      "true": {
+        "textures": {
+          "side": "technopop:blocks/led_matrix_side",
+          "end": "technopop:blocks/led_matrix_2x2",
+          "overlay" : "technopop:blocks/led_matrix_overlay_2x2"
+        }
+      },
+      "false": {
+        "textures": {
+          "side": "technopop:blocks/led_matrix_side",
+          "end": "technopop:blocks/led_matrix_2x2",
+          "overlay" : "technopop:blocks/led_matrix_overlay_2x2"
+        }
+      }
+    },
+    "inventory": [
+      {
+        "textures": {
+          "side": "technopop:blocks/led_matrix_side",
+          "end": "technopop:blocks/led_matrix_2x2",
+          "overlay" : "technopop:blocks/led_matrix_overlay_2x2"
+        }
+      }
+    ]
+  }
+}
