@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "technopop",
+    "name": "Technopop",
+    "description": "A tech mod for Minecraft Forge.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/DeflatedPickle/Technopop",
+    "updateUrl": "",
+    "authorList": [
+      "DeflatedPickle"
+    ],
+    "credits": "Mojang, Minecraft, Forge, FML",
+    "logoFile": "logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
