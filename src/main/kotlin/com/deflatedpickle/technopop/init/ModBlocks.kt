@@ -1,10 +1,7 @@
 package com.deflatedpickle.technopop.init
 
 import com.deflatedpickle.technopop.Reference
-import com.deflatedpickle.technopop.blocks.BlockLEDMatrix
-import com.deflatedpickle.technopop.blocks.BlockLamp
-import com.deflatedpickle.technopop.blocks.BlockMolexCable
-import com.deflatedpickle.technopop.blocks.BlockPCB
+import com.deflatedpickle.technopop.blocks.*
 import com.github.upcraftlp.glasspane.api.registry.AutoRegistry
 
 @AutoRegistry(Reference.MOD_ID)
@@ -20,4 +17,7 @@ object ModBlocks {
 
     @JvmField
     val MOLEX_CABLE = BlockMolexCable()
+
+    @JvmField
+    val PCB_TRANSMISSION_LINE = BlockPCBTransmissionLine()
 }

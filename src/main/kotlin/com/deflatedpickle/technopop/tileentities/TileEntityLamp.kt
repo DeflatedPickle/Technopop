@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
-class TileEntityLamp : TileEntity() {
+open class TileEntityLamp : TileEntity() {
     var colourIndex = EnumDyeColor.WHITE.colorValue
     set(value) {
         field = value
