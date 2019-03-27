@@ -9,11 +9,11 @@ import net.minecraft.util.math.AxisAlignedBB
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IBlockAccess
 
-class BlockLEDMatrix : Block(Material.REDSTONE_LIGHT) {
-    val axisAlignedBB = AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 4.0 / 16.0, 1.0)
+class BlockPCB : Block(Material.REDSTONE_LIGHT) {
+    val axisAlignedBB = AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 1.0 / 16.0, 1.0)
 
     init {
-        this.translationKey = "led_matrix_2x2"
+        this.translationKey = "pcb"
         this.creativeTab = CreativeTabs.REDSTONE
     }
 

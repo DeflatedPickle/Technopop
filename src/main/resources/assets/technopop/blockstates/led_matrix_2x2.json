@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "technopop:led_matrix_2x2"
+    }
+  }
+}

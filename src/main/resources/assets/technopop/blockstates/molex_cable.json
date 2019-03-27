@@ -1,0 +1,52 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "technopop:molex_cable_middle"
+  },
+  "variants": {
+    "north": {
+      "true": {
+        "submodel": {
+          "cable_north": {
+            "model": "technopop:molex_cable_connection"
+          }
+        }
+      },
+      "false": { }
+    },
+    "east": {
+      "true": {
+        "submodel": {
+          "cable_east": {
+            "model": "technopop:molex_cable_connection",
+            "y": 90
+          }
+        }
+      },
+      "false": { }
+    },
+    "south": {
+      "true": {
+        "submodel": {
+          "cable_south": {
+            "model": "technopop:molex_cable_connection",
+            "y": 180
+          }
+        }
+      },
+      "false": { }
+    },
+    "west": {
+      "true": {
+        "submodel": {
+          "cable_west": {
+            "model": "technopop:molex_cable_connection",
+            "y": 270
+          }
+        }
+      },
+      "false": { }
+    },
+    "inventory": [ ]
+  }
+}

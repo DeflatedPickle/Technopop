@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "technopop:blocks/molex_cable_connection",
+		"particle": "technopop:blocks/molex_cable_connection"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 1, 11],
+			"faces": {
+				"north": {"uv": [0, 5, 6, 6], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [5, 5, 6, 11], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 10, 6, 11], "texture": "#0"},
+				"west": {"uv": [0, 5, 1, 11], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [0, 5, 6, 11], "texture": "#0"},
+				"down": {"uv": [0, 5, 6, 11], "texture": "#0"}
+			}
+		}
+	]
+}
