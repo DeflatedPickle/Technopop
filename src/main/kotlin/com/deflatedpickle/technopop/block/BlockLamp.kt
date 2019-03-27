@@ -1,6 +1,6 @@
-package com.deflatedpickle.technopop.blocks
+package com.deflatedpickle.technopop.block
 
-import com.deflatedpickle.technopop.tileentities.TileEntityLamp
+import com.deflatedpickle.technopop.tileentity.TileEntityLamp
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 import net.minecraft.block.properties.PropertyBool

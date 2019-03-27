@@ -1,3 +1,3 @@
-package com.deflatedpickle.technopop.tileentities
+package com.deflatedpickle.technopop.tileentity
 
 class TileEntityPCBTransmissionLine : TileEntityLamp()

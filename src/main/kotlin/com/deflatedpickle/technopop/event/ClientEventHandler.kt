@@ -1,8 +1,8 @@
-package com.deflatedpickle.technopop.events
+package com.deflatedpickle.technopop.event
 
 import com.deflatedpickle.technopop.init.ModBlocks
-import com.deflatedpickle.technopop.tileentities.TileEntityLamp
-import com.deflatedpickle.technopop.tileentities.TileEntityPCBTransmissionLine
+import com.deflatedpickle.technopop.tileentity.TileEntityLamp
+import com.deflatedpickle.technopop.tileentity.TileEntityPCBTransmissionLine
 import net.minecraft.client.renderer.color.IBlockColor
 import net.minecraft.client.renderer.color.IItemColor
 import net.minecraft.item.EnumDyeColor

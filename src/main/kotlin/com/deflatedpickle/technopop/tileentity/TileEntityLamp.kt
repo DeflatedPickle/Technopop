@@ -1,8 +1,10 @@
-package com.deflatedpickle.technopop.tileentities
+package com.deflatedpickle.technopop.tileentity
 
+import com.deflatedpickle.technopop.Technopop
 import net.minecraft.block.state.IBlockState
 import net.minecraft.item.EnumDyeColor
 import net.minecraft.nbt.NBTTagCompound
+import net.minecraft.network.play.server.SPacketUpdateTileEntity
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
@@ -31,5 +33,16 @@ open class TileEntityLamp : TileEntity() {
     override fun readFromNBT(compound: NBTTagCompound) {
         super.readFromNBT(compound)
         this.colourIndex = compound.getInteger("colour")
+    }
+
+    override fun getUpdateTag(): NBTTagCompound {
+        return writeToNBT(NBTTagCompound().apply {
+            this.setInteger("colour", colourIndex)
+        })
+    }
+
+    override fun getUpdatePacket(): SPacketUpdateTileEntity {
+        Technopop.logger.info(updateTag)
+        return SPacketUpdateTileEntity(pos, 0, updateTag)
     }
 }

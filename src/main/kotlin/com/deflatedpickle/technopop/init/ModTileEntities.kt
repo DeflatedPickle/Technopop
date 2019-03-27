@@ -1,8 +1,8 @@
 package com.deflatedpickle.technopop.init
 
 import com.deflatedpickle.technopop.Reference
-import com.deflatedpickle.technopop.tileentities.TileEntityLamp
-import com.deflatedpickle.technopop.tileentities.TileEntityPCBTransmissionLine
+import com.deflatedpickle.technopop.tileentity.TileEntityLamp
+import com.deflatedpickle.technopop.tileentity.TileEntityPCBTransmissionLine
 import net.minecraftforge.fml.common.registry.GameRegistry
 
 object ModTileEntities {

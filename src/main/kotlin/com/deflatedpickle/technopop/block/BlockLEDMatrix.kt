@@ -1,5 +1,6 @@
-package com.deflatedpickle.technopop.blocks
+package com.deflatedpickle.technopop.block
 
+import com.deflatedpickle.technopop.api.block.IPCBComponent
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 import net.minecraft.block.state.IBlockState
@@ -9,11 +10,11 @@ import net.minecraft.util.math.AxisAlignedBB
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IBlockAccess
 
-class BlockPCB : Block(Material.REDSTONE_LIGHT) {
-    val axisAlignedBB = AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 1.0 / 16.0, 1.0)
+class BlockLEDMatrix : Block(Material.REDSTONE_LIGHT), IPCBComponent {
+    val axisAlignedBB = AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 4.0 / 16.0, 1.0)
 
     init {
-        this.translationKey = "pcb"
+        this.translationKey = "led_matrix_2x2"
         this.creativeTab = CreativeTabs.REDSTONE
     }
 

@@ -1,6 +1,6 @@
 package com.deflatedpickle.technopop.proxy
 
-import com.deflatedpickle.technopop.events.ClientEventHandler
+import com.deflatedpickle.technopop.event.ClientEventHandler
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 
