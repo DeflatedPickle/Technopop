@@ -36,13 +36,10 @@ open class TileEntityLamp : TileEntity() {
     }
 
     override fun getUpdateTag(): NBTTagCompound {
-        return writeToNBT(NBTTagCompound().apply {
-            this.setInteger("colour", colourIndex)
-        })
+        return writeToNBT(NBTTagCompound())
     }
 
     override fun getUpdatePacket(): SPacketUpdateTileEntity {
-        Technopop.logger.info(updateTag)
         return SPacketUpdateTileEntity(pos, 0, updateTag)
     }
 }
