@@ -9,12 +9,16 @@ import net.minecraft.block.state.IBlockState
 import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.EntityLivingBase
+import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.EnumDyeColor
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
+import net.minecraft.util.EnumFacing
+import net.minecraft.util.EnumHand
 import net.minecraft.util.NonNullList
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.RayTraceResult
 import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
 
@@ -63,6 +67,30 @@ class BlockLamp : Block(Material.REDSTONE_LIGHT) {
 
         if (tileEntity is TileEntityLamp && stack.hasTagCompound() && stack.tagCompound!!.hasKey("colour")) {
             tileEntity.colourIndex = stack.tagCompound!!.getInteger("colour")
+        }
+    }
+
+    override fun canConnectRedstone(state: IBlockState, world: IBlockAccess, pos: BlockPos, side: EnumFacing?): Boolean {
+        return true
+    }
+
+    override fun getStateForPlacement(world: World, pos: BlockPos, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float, meta: Int, placer: EntityLivingBase, hand: EnumHand): IBlockState {
+        return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand).withProperty(power, world.isBlockPowered(pos))
+    }
+
+    override fun getPickBlock(state: IBlockState, target: RayTraceResult, world: World, pos: BlockPos, player: EntityPlayer): ItemStack {
+        val tileEntity = world.getTileEntity(pos)
+
+        var colourIndex = EnumDyeColor.WHITE.colorValue
+        if (tileEntity is TileEntityLamp) {
+            colourIndex = tileEntity.colourIndex
+        }
+
+        return super.getPickBlock(state, target, world, pos, player).apply {
+            if (!hasTagCompound()) {
+                tagCompound = NBTTagCompound()
+            }
+            tagCompound!!.setInteger("colour", colourIndex)
         }
     }
 

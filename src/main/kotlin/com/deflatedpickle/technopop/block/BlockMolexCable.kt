@@ -4,6 +4,7 @@ import com.deflatedpickle.technopop.init.ModBlocks
 import net.minecraft.block.BlockFence
 import net.minecraft.block.material.MapColor
 import net.minecraft.block.material.Material
+import net.minecraft.block.state.BlockFaceShape
 import net.minecraft.block.state.IBlockState
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.Entity
@@ -25,6 +26,10 @@ class BlockMolexCable : BlockFence(Material.REDSTONE_LIGHT, MapColor.CLOTH) {
     override fun canConnectTo(worldIn: IBlockAccess, pos: BlockPos, facing: EnumFacing): Boolean {
         return worldIn.getBlockState(pos).block === ModBlocks.PCB
                 || worldIn.getBlockState(pos).block === ModBlocks.MOLEX_CABLE
+    }
+
+    override fun getBlockFaceShape(worldIn: IBlockAccess, state: IBlockState, pos: BlockPos, face: EnumFacing): BlockFaceShape {
+        return BlockFaceShape.UNDEFINED
     }
 
     override fun getBoundingBox(state: IBlockState, source: IBlockAccess, pos: BlockPos): AxisAlignedBB {

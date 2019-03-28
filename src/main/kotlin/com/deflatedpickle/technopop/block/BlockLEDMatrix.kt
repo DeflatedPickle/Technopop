@@ -6,6 +6,7 @@ import com.deflatedpickle.technopop.tileentity.TileEntityLEDMatrix
 import com.deflatedpickle.technopop.tileentity.TileEntityLamp
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
+import net.minecraft.block.state.BlockFaceShape
 import net.minecraft.block.state.IBlockState
 import net.minecraft.client.renderer.EnumFaceDirection
 import net.minecraft.creativetab.CreativeTabs
@@ -28,23 +29,26 @@ class BlockLEDMatrix : Block(Material.REDSTONE_LIGHT), IPCBComponent {
     }
 
     override fun neighborChanged(state: IBlockState, worldIn: World, pos: BlockPos, blockIn: Block, fromPos: BlockPos) {
+        onBlockAdded(worldIn, pos, state)
+    }
+
+    override fun onBlockAdded(worldIn: World, pos: BlockPos, state: IBlockState) {
         val tileEntity = worldIn.getTileEntity(pos)
 
         if (tileEntity is TileEntityLEDMatrix) {
-            val x = pos.subtract(fromPos).x
-            val z = pos.subtract(fromPos).z
-
-            when {
-                // North
-                z == 1 -> tileEntity.one = worldIn.isBlockPowered(fromPos)
-                // East
-                x == -1 -> tileEntity.two = worldIn.isBlockPowered(fromPos)
-                // South
-                z == -1 -> tileEntity.three = worldIn.isBlockPowered(fromPos)
-                // West
-                x == 1 -> tileEntity.four = worldIn.isBlockPowered(fromPos)
-            }
+            tileEntity.one = worldIn.isSidePowered(pos.offset(EnumFacing.NORTH), EnumFacing.NORTH)
+            tileEntity.two = worldIn.isSidePowered(pos.offset(EnumFacing.EAST), EnumFacing.EAST)
+            tileEntity.three = worldIn.isSidePowered(pos.offset(EnumFacing.WEST), EnumFacing.WEST)
+            tileEntity.four = worldIn.isSidePowered(pos.offset(EnumFacing.SOUTH), EnumFacing.SOUTH)
         }
+    }
+
+    override fun canConnectRedstone(state: IBlockState, world: IBlockAccess, pos: BlockPos, side: EnumFacing?): Boolean {
+        return side !== EnumFacing.UP
+    }
+
+    override fun getBlockFaceShape(worldIn: IBlockAccess, state: IBlockState, pos: BlockPos, face: EnumFacing): BlockFaceShape {
+        return BlockFaceShape.UNDEFINED
     }
 
     override fun isFullCube(state: IBlockState): Boolean {

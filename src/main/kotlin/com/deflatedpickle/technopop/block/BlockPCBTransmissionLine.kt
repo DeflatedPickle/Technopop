@@ -6,6 +6,7 @@ import com.deflatedpickle.technopop.tileentity.TileEntityPCBTransmissionLine
 import net.minecraft.block.BlockFence
 import net.minecraft.block.material.MapColor
 import net.minecraft.block.material.Material
+import net.minecraft.block.state.BlockFaceShape
 import net.minecraft.block.state.IBlockState
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.Entity
@@ -33,6 +34,10 @@ class BlockPCBTransmissionLine : BlockFence(Material.REDSTONE_LIGHT, MapColor.CL
         if (tileEntity is TileEntityPCBTransmissionLine) {
             tileEntity.colourIndex = pos.x * pos.y * pos.z
         }
+    }
+
+    override fun getBlockFaceShape(worldIn: IBlockAccess, state: IBlockState, pos: BlockPos, face: EnumFacing): BlockFaceShape {
+        return BlockFaceShape.UNDEFINED
     }
 
     override fun canConnectTo(worldIn: IBlockAccess, pos: BlockPos, facing: EnumFacing): Boolean {

@@ -4,6 +4,7 @@ import com.deflatedpickle.technopop.Technopop
 import net.minecraft.block.state.IBlockState
 import net.minecraft.item.EnumDyeColor
 import net.minecraft.nbt.NBTTagCompound
+import net.minecraft.network.NetworkManager
 import net.minecraft.network.play.server.SPacketUpdateTileEntity
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.math.BlockPos
@@ -41,5 +42,9 @@ open class TileEntityLamp : TileEntity() {
 
     override fun getUpdatePacket(): SPacketUpdateTileEntity {
         return SPacketUpdateTileEntity(pos, 0, updateTag)
+    }
+
+    override fun onDataPacket(net: NetworkManager, pkt: SPacketUpdateTileEntity) {
+        readFromNBT(pkt.nbtCompound)
     }
 }
