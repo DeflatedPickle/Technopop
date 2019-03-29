@@ -19,5 +19,5 @@ object ModBlocks {
     val MOLEX_CABLE = BlockMolexCable()
 
     @JvmField
-    val PCB_TRANSMISSION_LINE = BlockPCBTransmissionLine()
+    val PCB_CONNECTION_POINT = BlockPCBConnectionPoint()
 }
