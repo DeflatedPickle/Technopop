@@ -1,0 +1,15 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "textures": [
+        "technopop:blocks/pcb_ctm"
+    ],
+    "extra": {
+    "light": 0,
+      "connect_to": [
+        { "block": "technopop:pcb" }
+      ]
+    }
+  }
+}

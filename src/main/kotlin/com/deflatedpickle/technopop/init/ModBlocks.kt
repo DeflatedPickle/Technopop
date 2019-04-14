@@ -20,4 +20,7 @@ object ModBlocks {
 
     @JvmField
     val PCB_CONNECTION_POINT = BlockPCBConnectionPoint()
+
+    @JvmField
+    val CORK_BOARD = BlockCorkBoard()
 }
